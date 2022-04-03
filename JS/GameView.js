@@ -28,25 +28,7 @@ export default class GameView {
       }
     }
 
-    if (winnigCombination) {
-      setTimeout(() => {
-        alert(
-          `Player "${
-            game.board[winnigCombination[0]]
-          }" Won Please Start New Game`
-        );
-        window.location.reload();
-      }, 500);
-      return;
-    }
-
-    if (!game.board.includes(null)) {
-      setTimeout(() => {
-        alert(`Game Draw....! Please Start New Game`);
-        window.location.reload();
-      }, 500);
-      return;
-    }
+    
   }
 
   updateTurn(game) {

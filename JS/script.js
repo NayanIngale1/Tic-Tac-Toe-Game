@@ -22,6 +22,27 @@ function onTileClick(i) {
   game.makeMove(i)
   // update board
   gameView.updateBoard(game);
+
+  const winnigCombination = game.findWinningCombinations();
+  if (winnigCombination) {
+    setTimeout(() => {
+      alert(
+        `Player "${game.board[winnigCombination[0]]}" Won Please Start New Game`
+      );
+      // window.location.reload();
+      startNewGame();
+    }, 500);
+    return;
+  }
+
+  if (!game.board.includes(null)) {
+    setTimeout(() => {
+      alert(`Game Draw....! Please Start New Game`);
+      // window.location.reload();
+      startNewGame();
+    }, 500);
+    return;
+  }
 }
 
 function startNewGame() {
@@ -29,7 +50,7 @@ function startNewGame() {
   gameView.updateBoard(game);
 }
 
-  gameView.updateBoard(game);
+gameView.updateBoard(game);
 
 
 let DarkBtn = document.getElementById('btn');
