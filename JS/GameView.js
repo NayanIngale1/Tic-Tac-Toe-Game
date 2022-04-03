@@ -35,7 +35,7 @@ export default class GameView {
             game.board[winnigCombination[0]]
           }" Won Please Start New Game`
         );
-        // window.location.reload();
+        window.location.reload();
       }, 500);
       return;
     }
@@ -43,7 +43,7 @@ export default class GameView {
     if (!game.board.includes(null)) {
       setTimeout(() => {
         alert(`Game Draw....! Please Start New Game`);
-        // window.location.reload();
+        window.location.reload();
       }, 500);
       return;
     }
